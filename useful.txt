@@ -1,1 +1,3 @@
 catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3
+rosdep check simple_arm  
+set(CMAKE_PREFIX_PATH _PATH "/opt/ros/noetic;${CMAKE_MODULE_PATH}") ----> in node CMakeLists.txt 
