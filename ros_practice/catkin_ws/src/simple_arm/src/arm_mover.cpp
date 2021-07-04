@@ -26,10 +26,10 @@ void ArmMover::clamp_at_boundaries(){
 
     const std::string& node_name = ros::this_node::getName();
 
-    n.getParam(node_name+locals.params.joint1_min_angle, min_j1);
-    n.getParam(node_name+locals.params.joint1_max_angle, max_j1);
-    n.getParam(node_name+locals.params.joint2_min_angle, min_j2);
-    n.getParam(node_name+locals.params.joint2_max_angle, max_j2);
+    n.getParam(node_name + local_vars.params.joint1_min_angle, min_j1);
+    n.getParam(node_name + local_vars.params.joint1_max_angle, max_j1);
+    n.getParam(node_name + local_vars.params.joint2_min_angle, min_j2);
+    n.getParam(node_name + local_vars.params.joint2_max_angle, max_j2);
 
     if(joint1_angle.data < min_j1 || joint1_angle.data > max_j1){
         joint1_angle.data = std::min(std::max((float)joint1_angle.data, min_j1), max_j1);
@@ -53,19 +53,19 @@ bool ArmMover::safe_move_request_handler(simple_arm::GoToPosition::Request& req,
 
     ros::Duration(3).sleep();
 
-    res.msg_feedback = "Joint angles set - j1: " + std::to_string(joint1_angle.data) + " , j2: " + std::to_string(joint1_angle.data);
+    res.msg_feedback = "Joint angles set - j1: " + std::to_string(joint1_angle.data) + " , j2: " + std::to_string(joint2_angle.data);
     ROS_INFO_STREAM(res.msg_feedback);
     return true;
 }
 
 ArmMover::ArmMover(int argc, char **argv) {
-    ros::init(argc, argv, locals.nodes.arm_mover);
+    ros::init(argc, argv, local_vars.nodes.arm_mover);
     ros::NodeHandle n;
 
-    joint1_pub = n.advertise<std_msgs::Float64>(locals.topics.joint1_cmd, 10);
-    joint2_pub = n.advertise<std_msgs::Float64>(locals.topics.joint2_cmd, 10);
+    joint1_pub = n.advertise<std_msgs::Float64>(local_vars.topics.joint1_cmd, 10);
+    joint2_pub = n.advertise<std_msgs::Float64>(local_vars.topics.joint2_cmd, 10);
 
-    ros::ServiceServer service = n.advertiseService(locals.services.safe_move, &ArmMover::safe_move_request_handler, this);
+    ros::ServiceServer service = n.advertiseService(local_vars.services.safe_move, &ArmMover::safe_move_request_handler, this);
     ROS_INFO("Ready to send joint commands");
     ros::spin();
 }
