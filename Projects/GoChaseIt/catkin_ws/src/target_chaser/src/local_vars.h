@@ -9,13 +9,12 @@
 
 struct Nodes{
     std::string chase_it {"chase_it"};
+    std::string locate_it {"locate_it"};
 };
 
 struct Topics{
     std::string velocity_cmd {"/cmd_vel"};
-    std::string joint2_cmd {"/simple_arm/joint_2_position_controller/command"};
-    std::string joint_states {"/simple_arm/joint_states"};
-    std::string image_raw {"rgb_camera/image_raw"};
+    std::string image_raw {"/camera/rgb/image_raw"};
 };
 
 struct Services{

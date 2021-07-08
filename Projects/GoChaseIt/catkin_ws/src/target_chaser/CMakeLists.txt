@@ -208,3 +208,7 @@ include_directories(
 add_executable(chase_it src/chase_it.cpp)
 target_link_libraries(chase_it ${catkin_LIBRARIES})
 add_dependencies(chase_it target_chaser_generate_messages_cpp)
+
+add_executable(locate_it src/target_locator.cpp)
+target_link_libraries(locate_it ${catkin_LIBRARIES})
+add_dependencies(locate_it target_chaser_generate_messages_cpp)
