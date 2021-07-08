@@ -1,0 +1,7 @@
+<launch>
+
+    <!-- The chase_it node -->
+    <node name="chase_it" type="chase_it" pkg="target_chaser" output="screen">
+    </node>
+
+</launch>
