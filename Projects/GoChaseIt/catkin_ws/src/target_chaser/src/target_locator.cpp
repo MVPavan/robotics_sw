@@ -12,6 +12,7 @@ private:
     ros::ServiceClient client;
     ros::Subscriber sub;
     float prev_linear_x{0.0}, prev_angular_z{0.0};
+    bool use_linear{false};
 
 public:
     TargetLocator(int argc, char** argv);
@@ -33,9 +34,9 @@ void TargetLocator::feed_velocities(float linear_x, float angular_z){
 }
 
 void TargetLocator::locate_white_ball(const sensor_msgs::Image& img) {
-    int x{0}, y{0}, bin_size{10}, azimuth_shift{0}, range{0};
-    double count{0}, max_ball_image_size{double(3.14*200*200)};
-    float  x_factor{0.01}, z_factor{0.1}, linear_x{0.0}, angular_z{0.0};
+    int x{0}, y{0}, bin_size{10}, azimuth_shift{0};
+    double count{0}, max_ball_image_size{double(3.14*200*200)}, range{0};
+    float  x_factor{0.01}, z_factor{0.05}, linear_x{0.0}, angular_z{0.0};
     bool chase_it_flag{false};
     for(size_t i{0}; i<img.data.size(); i+=3){
         if(
@@ -52,18 +53,25 @@ void TargetLocator::locate_white_ball(const sensor_msgs::Image& img) {
     if (count < max_ball_image_size) {
         if (count != 0){
             azimuth_shift = img.width / 2 - x / count ;
-            if(azimuth_shift>0)
-                angular_z = std::min((float)0.75, azimuth_shift*z_factor/bin_size);
+            range = max_ball_image_size/count;
+            bin_size = std::max(10, std::min(30,(int)range));
+            angular_z = azimuth_shift*z_factor/bin_size;
+            if(angular_z>0)
+                angular_z = std::min((float)0.5, angular_z);
             else
-                angular_z = std::max((float)-0.75, azimuth_shift*z_factor/bin_size);
+                angular_z = std::max((float)-0.5, angular_z);
 
             //large angular_z not working along with linear_x
             //setting linear_x only after convergence in angular_z
-            if ((angular_z >=-0.5) && (angular_z <=0.5))
-                linear_x = std::min((double)1.5, max_ball_image_size*x_factor/count);
+            if(std::abs(angular_z)<0.1){use_linear= true;}
+            else if(std::abs(angular_z)>0.4){use_linear= false;}
+
+            if(use_linear)
+                linear_x = std::min((double)0.5, range*x_factor);
 
             feed_velocities(linear_x=linear_x,angular_z=angular_z);
             chase_it_flag= true;
+//            feed_velocities(linear_x=0,angular_z=0);
         }
     }
 
