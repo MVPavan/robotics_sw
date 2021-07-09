@@ -57,6 +57,8 @@ void TargetLocator::locate_white_ball(const sensor_msgs::Image& img) {
             else
                 angular_z = std::max((float)-0.75, azimuth_shift*z_factor/bin_size);
 
+            //large angular_z not working along with linear_x
+            //setting linear_x only after convergence in angular_z
             if ((angular_z >=-0.5) && (angular_z <=0.5))
                 linear_x = std::min((double)1.5, max_ball_image_size*x_factor/count);
 
