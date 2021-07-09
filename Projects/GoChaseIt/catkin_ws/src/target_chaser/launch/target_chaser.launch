@@ -4,4 +4,7 @@
     <node name="chase_it" type="chase_it" pkg="target_chaser" output="screen">
     </node>
 
+    <node name="locate_it" type="locate_it" pkg="target_chaser" output="screen">
+    </node>
+
 </launch>

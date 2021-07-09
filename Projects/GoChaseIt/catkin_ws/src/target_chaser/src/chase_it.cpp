@@ -25,7 +25,7 @@ bool
 TargetChaser::chase_request_handler(target_chaser::ChaseTarget::Request &req, target_chaser::ChaseTarget::Response &res) {
     total_velocity.linear.x = (float)req.linear_x;
     total_velocity.angular.z = (float)req.angular_z;
-    ROS_INFO("GoToPositionRequest received for linear_X:%1.2f, angular_Z:%1.2f", linear_x.data, angular_z.data);
+//    ROS_INFO("GoToPositionRequest received for linear_X:%1.2f, angular_Z:%1.2f", total_velocity.linear.x, total_velocity.angular.z);
     drive_command_pub.publish(total_velocity);
 
     res.msg_feedback = "Velocities set to - linear_x: " + std::to_string(total_velocity.linear.x)
