@@ -42,7 +42,7 @@ void TargetLocator::locate_white_ball(const sensor_msgs::Image& img) {
         if(
                 img.data.at(i)==255 &&
                 img.data.at(i+1)==255 &&
-                img.data.at(i+1)==255 &&
+                img.data.at(i+2)==255 &&
                 i%3==0
         ){
             x += (i/3)%img.width;
@@ -55,11 +55,9 @@ void TargetLocator::locate_white_ball(const sensor_msgs::Image& img) {
             azimuth_shift = img.width / 2 - x / count ;
             range = max_ball_image_size/count;
             bin_size = std::max(10, std::min(30,(int)range));
+
             angular_z = azimuth_shift*z_factor/bin_size;
-            if(angular_z>0)
-                angular_z = std::min((float)0.5, angular_z);
-            else
-                angular_z = std::max((float)-0.5, angular_z);
+            angular_z = std::max((float)-0.5, std::min((float)0.5, angular_z));
 
             //large angular_z not working along with linear_x
             //setting linear_x only after convergence in angular_z
@@ -71,9 +69,9 @@ void TargetLocator::locate_white_ball(const sensor_msgs::Image& img) {
 
             feed_velocities(linear_x=linear_x,angular_z=angular_z);
             chase_it_flag= true;
-//            feed_velocities(linear_x=0,angular_z=0);
         }
     }
+
 
     if(
         !chase_it_flag &&
@@ -88,6 +86,8 @@ void TargetLocator::locate_white_ball(const sensor_msgs::Image& img) {
             ROS_ERROR("Locator Malfunction !!");
     }
 }
+
+
 
 TargetLocator::TargetLocator(int argc, char** argv){
     ros::init(argc, argv, local_vars.nodes.locate_it);

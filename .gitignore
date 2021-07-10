@@ -33,7 +33,7 @@
 
 
 *.gif
-*.mkv
+#*.mkv
 
 **/build/
 **/devel/
