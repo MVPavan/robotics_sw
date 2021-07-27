@@ -39,3 +39,6 @@
 **/devel/
 **/cmake-build-debug/*
 
+*.settings
+**/bin
+**/lib
