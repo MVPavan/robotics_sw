@@ -44,4 +44,5 @@
 **/lib
 
 **/temp
-*.pgm
+#*.pgm
+**/pgm_map_creator/maps/
