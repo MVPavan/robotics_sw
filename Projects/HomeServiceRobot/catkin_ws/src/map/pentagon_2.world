@@ -4103,33 +4103,33 @@
         </model>
       </model>
       <model name='filled_pentagon_3'>
-        <pose frame=''>-4.28566 1.32617 0.104745 0 -0 0</pose>
+        <pose frame=''>-4.28566 1.32617 0.0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <model name='RegionEventBox'>
-          <pose frame=''>2 -2.52408 0.104745 0 -0 0</pose>
+          <pose frame=''>2 -2.52408 0.0 0 -0 0</pose>
           <scale>1 1 1</scale>
           <link name='link'>
-            <pose frame=''>2 -2.52408 0.104745 0 -0 0</pose>
+            <pose frame=''>2 -2.52408 0.0 0 -0 0</pose>
             <velocity>0 0 0 0 -0 0</velocity>
             <acceleration>0 0 0 0 -0 0</acceleration>
             <wrench>0 0 0 0 -0 0</wrench>
           </link>
         </model>
         <model name='mars_rover'>
-          <pose frame=''>6.50094 -0.43111 0.104745 0 -0 0</pose>
+          <pose frame=''>6.50094 -0.43111 0 0 -0 0</pose>
           <scale>1 1 1</scale>
           <link name='link'>
-            <pose frame=''>6.50094 -0.43111 0.104745 0 -0 0</pose>
+            <pose frame=''>6.50094 -0.43111 0 0 -0 0</pose>
             <velocity>0 0 0 0 -0 0</velocity>
             <acceleration>0 0 0 0 -0 0</acceleration>
             <wrench>0 0 0 0 -0 0</wrench>
           </link>
         </model>
         <model name='mars_rover_clone'>
-          <pose frame=''>-2.43627 -1.46226 0.104745 0 -0 0</pose>
+          <pose frame=''>-2.43627 -1.46226 0 0 -0 0</pose>
           <scale>1 1 1</scale>
           <link name='link'>
-            <pose frame=''>-2.43627 -1.46226 0.104745 0 -0 0</pose>
+            <pose frame=''>-2.43627 -1.46226 0 0 -0 0</pose>
             <velocity>0 0 0 0 -0 0</velocity>
             <acceleration>0 0 0 0 -0 0</acceleration>
             <wrench>0 0 0 0 -0 0</wrench>
@@ -4256,20 +4256,20 @@
           </link>
         </model>
         <model name='warehouse_robot'>
-          <pose frame=''>-0.36595 -4.25109 0.104745 0 -0 0</pose>
+          <pose frame=''>-0.36595 -4.25109 0.0 0 -0 0</pose>
           <scale>1 1 1</scale>
           <link name='link'>
-            <pose frame=''>-0.36595 -4.25109 0.104745 0 -0 0</pose>
+            <pose frame=''>-0.36595 -4.25109 0.0 0 -0 0</pose>
             <velocity>0 0 0 0 -0 0</velocity>
             <acceleration>0 0 0 0 -0 0</acceleration>
             <wrench>0 0 0 0 -0 0</wrench>
           </link>
         </model>
         <model name='warehouse_robot_clone'>
-          <pose frame=''>-7.40145 -0.46982 0.104745 0 -0 0</pose>
+          <pose frame=''>-7.40145 -0.46982 0.0 0 -0 0</pose>
           <scale>1 1 1</scale>
           <link name='link'>
-            <pose frame=''>-7.40145 -0.46982 0.104745 0 -0 0</pose>
+            <pose frame=''>-7.40145 -0.46982 0.0 0 -0 0</pose>
             <velocity>0 0 0 0 -0 0</velocity>
             <acceleration>0 0 0 0 -0 0</acceleration>
             <wrench>0 0 0 0 -0 0</wrench>
@@ -5321,7 +5321,7 @@
           <kinematic>0</kinematic>
           <gravity>1</gravity>
         </link>
-        <pose frame=''>7.28566 -4.90832 -0.104745 0 -0 0</pose>
+        <pose frame=''>7.28566 -4.90832 -0.0 0 -0 0</pose>
       </model>
       <model name='table'>
         <static>0</static>
@@ -5527,7 +5527,7 @@
           <kinematic>0</kinematic>
           <gravity>1</gravity>
         </link>
-        <pose frame=''>-1.55347 -4.20119 -0.104745 0 -0 0</pose>
+        <pose frame=''>-1.55347 -4.20119 -0.0 0 -0 0</pose>
       </model>
       <model name='table_clone'>
         <static>0</static>
@@ -5733,7 +5733,7 @@
           <kinematic>0</kinematic>
           <gravity>1</gravity>
         </link>
-        <pose frame=''>-1.55039 -2.63876 -0.104745 0 -0 0</pose>
+        <pose frame=''>-1.55039 -2.63876 -0.0 0 -0 0</pose>
       </model>
       <model name='table_clone_0'>
         <static>0</static>
@@ -5939,7 +5939,7 @@
           <kinematic>0</kinematic>
           <gravity>1</gravity>
         </link>
-        <pose frame=''>-1.51793 0.757853 -0.104745 0 -0 0</pose>
+        <pose frame=''>-1.51793 0.757853 -0.0 0 -0 0</pose>
       </model>
       <model name='table_clone_0_clone'>
         <static>0</static>
@@ -6145,7 +6145,7 @@
           <kinematic>0</kinematic>
           <gravity>1</gravity>
         </link>
-        <pose frame=''>4.31785 5.31473 -0.104745 0 -0 0</pose>
+        <pose frame=''>4.31785 5.31473 -0.0 0 -0 0</pose>
       </model>
       <model name='table_clone_1'>
         <static>0</static>
@@ -6351,7 +6351,7 @@
           <kinematic>0</kinematic>
           <gravity>1</gravity>
         </link>
-        <pose frame=''>-4.14429 0.673834 -0.104745 0 -0 0</pose>
+        <pose frame=''>-4.14429 0.673834 -0.0 0 -0 0</pose>
       </model>
       <model name='table_clone_1_clone'>
         <static>0</static>
@@ -7475,7 +7475,7 @@
       </model>
       <static>0</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose frame=''>-4.28566 1.32617 0.104745 0 -0 0</pose>
+      <pose frame=''>-4.28566 1.32617 0.0 0 -0 0</pose>
     </model>
     <gui fullscreen='0'>
       <camera name='user_camera'>
