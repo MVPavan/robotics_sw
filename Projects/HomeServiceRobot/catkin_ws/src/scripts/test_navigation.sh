@@ -14,6 +14,6 @@ sleep 2
 xterm -e " source devel/setup.sh; roslaunch turtlebot_rviz_launchers view_navigation.launch " &
 sleep 2
 #xterm -e " source devel/setup.sh; roslaunch turtlebot_teleop keyboard_teleop.launch " &
-#sleep 2
-#xterm -e " source devel/setup.sh; rosrun rqt_image_view rqt_image_view "
+sleep 2
+xterm -e " source devel/setup.sh; rosrun rqt_image_view rqt_image_view "
 

@@ -12,14 +12,11 @@ sleep 5
 xterm -e " source devel/setup.sh; roslaunch turtlebot_gazebo amcl_demo.launch " &
 sleep 2
 xterm -e " source devel/setup.sh; roslaunch turtlebot_rviz_launchers view_navigation.launch " &
-sleep 20
+sleep 2
 #xterm -e " source devel/setup.sh; roslaunch turtlebot_teleop keyboard_teleop.launch " &
 #sleep 2
 
-
-sleep 100
-xterm -e " source devel/setup.sh; rosrun add_markers add_markers " &
-sleep 50
-xterm -e " source devel/setup.sh; rosrun pick_objects pick_objects " &
+#sleep 10
+xterm -e " source devel/setup.sh; rosrun add_markers_static add_markers_static " &
 sleep 2
 xterm -e " source devel/setup.sh; rosrun rqt_image_view rqt_image_view "
