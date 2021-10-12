@@ -1,2 +1,1 @@
-# robotics_sw
-Udacity Robotics software engineer nanodegree
+Projects/HomeServiceRobot/README.md
