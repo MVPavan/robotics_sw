@@ -83,13 +83,13 @@ After all the individual blocks are ready, its time for integration to achieve t
 
     * Packages used: All previous packages, actionlib, odom
     
-    The map of the pentagon created is the essential input to the bot. 
-    actionlib package is used to publish pre-defined goals to the bot. After recieving the goal, the robot uses input map, AMCL and 
-    Dijkstra path planning algo to localize it self in the map and obtain the approapriate path beteween the current locaiton 
-    to published goal.
+    The map of the pentagon created is the essential input to the bot. Actionlib package is used to publish pre-defined goals to the bot. 
 
-    Now we modify the pickup and drop logic such that pickup should happen when the bot is with in certian area of pickup location
-    similarly the drop should happen when the bot reaches the drop location. In order to knwo the bot's location we use odom package.
+    After recieving the goal, the robot uses input map, AMCL and Dijkstra path planning algo to localize it self in the 
+    map and obtain the approapriate path beteween the current locaiton to published goal.
+
+    Now we modify the pickup and drop logic such that pickup should happen when the bot is with in certian area of pickup location,
+    similarly the drop should happen when the bot reaches the drop location. In order to know the bot's location we use odom package.
     (Note: the virtaul object here is in blue color)
 
     Once all the components are integrated the final solution looks as shown in the below GIF.
