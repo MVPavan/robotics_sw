@@ -3,9 +3,11 @@
 ## Final Project: Home Service Robot
 
 #### Problem Statement: 
-Create a Robot that travels to a fixed pickup point, simulate the load pickup using virtual marker and 
-finally travel to a fixed drop point and simulate the load drop.
+Create a Robot that travels to a predefined pickup point in a map, pickup the load (simulate using virtual marker) and 
+travel autonomously to a predefined drop point and simulate the load drop (virtual marker).
 
+[comment]: <> (<p align="center"><img src="./docs/home_service.gif"></p>)
+<img src="./docs/home_service.gif" alt="alt">
 #### Packages used:
 
 * `turtlebot_gazebo`: This provides a Gazebo simulation of the TurtleBot equipped with 2-D lidar and RGB camera .
